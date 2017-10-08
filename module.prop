@@ -1,4 +1,4 @@
-id=XposedFramework
+id=xposed_25
 name=Xposed Framework
 version=v1.0 (v88, SDK 25)
 versionCode=1
