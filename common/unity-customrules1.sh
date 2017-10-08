@@ -7,4 +7,22 @@
 # ^ DO NOT MODIFY ^
 TIMEOFEXEC=2
 ui_print "    Installing libs for $ARCH device"
-$CP_PRFX $INSTALLER/custom/$ARCH/. $UNITY$SYS*
+$CP_PRFX $INSTALLER/custom/$ARCH/xposed.prop $UNITY$SYS/xposed.prop
+$CP_PRFX $INSTALLER/custom/$ARCH/framework/XposedBridge.jar $UNITY$SYS/framework/XposedBridge.jar
+$CP_PRFX $INSTALLER/custom/$ARCH/bin/app_process32 $UNITY$SYS/bin/app_process32 0755
+$CP_PRFX $INSTALLER/custom/$ARCH/bin/dex2oat $UNITY$SYS/bin/dex2oat 0755
+$CP_PRFX $INSTALLER/custom/$ARCH/bin/oatdump $UNITY$SYS/bin/oatdump 0755
+$CP_PRFX $INSTALLER/custom/$ARCH/bin/patchoat $UNITY$SYS/bin/patchoat 0755
+$CP_PRFX $INSTALLER/custom/$ARCH/lib/libart.so $UNITY$SYS/lib/libart.so
+$CP_PRFX $INSTALLER/custom/$ARCH/lib/libart-compiler.so $UNITY$SYS/lib/libart-compiler.so
+$CP_PRFX $INSTALLER/custom/$ARCH/lib/libart-disassembler.so $UNITY$SYS/lib/libart-disassembler.so
+$CP_PRFX $INSTALLER/custom/$ARCH/lib/libsigchain.so $UNITY$SYS/lib/libsigchain.so
+$CP_PRFX $INSTALLER/custom/$ARCH/lib/libxposed_art.so $UNITY$SYS/lib/libxposed_art.so
+if [ $IS64BIT ]; then
+  $CP_PRFX $INSTALLER/custom/$ARCH/bin/app_process64 $UNITY$SYS/bin/app_process64 0755
+  $CP_PRFX $INSTALLER/custom/$ARCH/lib64/libart.so $UNITY$SYS/lib64/libart.so
+  $CP_PRFX $INSTALLER/custom/$ARCH/lib64/libart-compiler.so $UNITY$SYS/lib64/libart-compiler.so
+  $CP_PRFX $INSTALLER/custom/$ARCH/lib64/libart-disassembler.so $UNITY$SYS/lib64/libart-disassembler.so
+  $CP_PRFX $INSTALLER/custom/$ARCH/lib64/libsigchain.so $UNITY$SYS/lib64/libsigchain.so
+  $CP_PRFX $INSTALLER/custom/$ARCH/lib64/libxposed_art.so $UNITY$SYS/lib64/libxposed_art.so
+fi
