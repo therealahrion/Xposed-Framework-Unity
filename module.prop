@@ -1,0 +1,10 @@
+id=Xposed
+name=Xposed Framework
+version=v1.0 (v88 SDK 25)
+versionCode=1
+author=ahrion, zackptg5
+description=Xposed Framework ported to Unity
+support=
+donate=https://github.com/therealahrion/Xposed-Framework
+template=1410
+minVer=1400
