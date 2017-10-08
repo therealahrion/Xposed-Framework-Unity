@@ -7,4 +7,4 @@
 # ^ DO NOT MODIFY ^
 TIMEOFEXEC=2
 ui_print "    Installing libs for $ARCH device"
-$CP_PRFX $INSTALLER/custom/$ARCH/* $UNITY$SYS*
+$CP_PRFX $INSTALLER/custom/$ARCH/. $UNITY$SYS*
