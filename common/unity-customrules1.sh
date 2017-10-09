@@ -6,8 +6,15 @@
 # See instructions for TIMEOFEXEC values, do not remove it
 # ^ DO NOT MODIFY ^
 TIMEOFEXEC=2
+
+if [ "$MAGISK" == true ]; then
+  for app_process in $INSTALLER/custom/*/bin/app_process*; do
+      sed -i 's/\/system\/xposed.prop\x0/\/xposed.prop\x0\x0\x0\x0\x0\x0\x0\x0/g' $app_process
+  done
+fi
+
 ui_print "    Installing libs for $ARCH device"
-$CP_PRFX $INSTALLER/custom/$ARCH/xposed.prop $UNITY$SYS/xposed.prop
+$CP_PRFX $INSTALLER/custom/$ARCH/xposed.prop $UNITY/xposed.prop
 $CP_PRFX $INSTALLER/custom/$ARCH/framework/XposedBridge.jar $UNITY$SYS/framework/XposedBridge.jar
 $CP_PRFX $INSTALLER/custom/$ARCH/bin/app_process32_xposed $UNITY$SYS/bin/app_process32 0755
 $CP_PRFX $INSTALLER/custom/$ARCH/bin/dex2oat $UNITY$SYS/bin/dex2oat 0755
