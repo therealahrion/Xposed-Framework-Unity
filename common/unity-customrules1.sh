@@ -8,6 +8,14 @@
 TIMEOFEXEC=2
 
 ui_print "    Installing libs for $API API $ARCH device"
+if [ "$MAGISK" == true ]; then
+  for app_process in $INSTALLER/custom/$API/$ARCH/bin/app_process*; do
+    sed -i 's/\/system\/xposed.prop\x0/\/xposed.prop\x0\x0\x0\x0\x0\x0\x0\x0/g' $app_process
+  done
+else
+  test $API -ge 22 && find $SYS $VEN -type f -name '*.odex.gz' 2>/dev/null | while read f; do mv "$f" "$f.xposed"; done
+fi
+
 $CP_PRFX $INSTALLER/custom/$API/$ARCH/xposed.prop $UNITY/xposed.prop
 $CP_PRFX $INSTALLER/custom/$API/$ARCH/bin/app_process32 $UNITY$SYS/bin/app_process32
 $CP_PRFX $INSTALLER/custom/$API/$ARCH/bin/dex2oat $UNITY$SYS/bin/dex2oat
