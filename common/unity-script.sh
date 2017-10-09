@@ -15,6 +15,9 @@ mount -o ro,remount /
 
 test $IS22 -lt 22 && exit
 
+# Fix Magisk bug
+chcon u:object_r:system_file:s0 /magisk
+
 # Cleanup
 if [ -f $SH/lists ]; then
   for DIR  in `cat $SH/lists`; do
