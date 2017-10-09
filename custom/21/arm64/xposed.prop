@@ -1,0 +1,4 @@
+version=88
+arch=arm64
+minsdk=21
+maxsdk=21
