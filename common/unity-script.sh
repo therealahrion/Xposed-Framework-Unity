@@ -5,7 +5,7 @@
 DISABLE=/data/data/de.robv.android.xposed.installer/conf/disabled
 MIRRDIR=/dev/magisk/mirror
 
-[[ -f $DISABLE -a $SH != "/magisk/"* ]] && exit
+[[ -f $DISABLE && $SH != "/magisk/"* ]] && exit
 
 IS22=$(grep "minsdk=" $SH/xposed.prop | sed 's/^.*=//')
 
