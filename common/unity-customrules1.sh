@@ -15,7 +15,6 @@ fi
 
 ui_print "    Installing libs for $ARCH device"
 $CP_PRFX $INSTALLER/custom/$ARCH/xposed.prop $UNITY/xposed.prop
-$CP_PRFX $INSTALLER/custom/$ARCH/framework/XposedBridge.jar $UNITY$SYS/framework/XposedBridge.jar
 $CP_PRFX $INSTALLER/custom/$ARCH/bin/app_process32_xposed $UNITY$SYS/bin/app_process32 0755
 $CP_PRFX $INSTALLER/custom/$ARCH/bin/dex2oat $UNITY$SYS/bin/dex2oat 0755
 $CP_PRFX $INSTALLER/custom/$ARCH/bin/oatdump $UNITY$SYS/bin/oatdump 0755
