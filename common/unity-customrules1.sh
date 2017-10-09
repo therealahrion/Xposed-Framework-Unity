@@ -17,7 +17,7 @@ $CP_PRFX $INSTALLER/custom/$API/$ARCH/lib/libart.so $UNITY$SYS/lib/libart.so
 $CP_PRFX $INSTALLER/custom/$API/$ARCH/lib/libart-compiler.so $UNITY$SYS/lib/libart-compiler.so
 $CP_PRFX $INSTALLER/custom/$API/$ARCH/lib/libsigchain.so $UNITY$SYS/lib/libsigchain.so
 $CP_PRFX $INSTALLER/custom/$API/$ARCH/lib/libxposed_art.so $UNITY$SYS/lib/libxposed_art.so
-if [ $IS64BIT ]; then
+if $IS64BIT; then
   $CP_PRFX $INSTALLER/custom/$API/$ARCH/bin/app_process64 $UNITY$SYS/bin/app_process64
   $CP_PRFX $INSTALLER/custom/$API/$ARCH/lib64/libart.so $UNITY$SYS/lib64/libart.so
   $CP_PRFX $INSTALLER/custom/$API/$ARCH/lib64/libart-compiler.so $UNITY$SYS/lib64/libart-compiler.so
