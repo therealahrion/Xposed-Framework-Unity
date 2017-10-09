@@ -84,7 +84,7 @@ set_permissions() {
   set_perm_recursive $UNITY$SYS/bin 0 2000 0755 0755
   set_perm $UNITY$SYS/bin/app_process32 0 2000 0755 u:object_r:zygote_exec:s0
   set_perm $UNITY$SYS/bin/dex2oat 0 2000 0755 u:object_r:dex2oat_exec:s0
-  set_perm $UNITY$SYS/bin/patchoat 0 2000 0755 u:object_r:dex2oat_exec:s0
+  set_perm $UNITY$SYS/bin/patchoat 0 2000 0755 u:object_r:zygote_exec:s0
 
   $IS64BIT && set_perm $UNITY$SYS/bin/app_process64 0 2000 0755 u:object_r:zygote_exec:s0
 
