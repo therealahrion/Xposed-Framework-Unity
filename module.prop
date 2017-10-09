@@ -1,5 +1,5 @@
-id=xposed_25
-name=Xposed Framework (SDK 25)
+id=xposed
+name=Xposed Framework
 version=88 (Systemless by topjohnwu)
 versionCode=88
 author=ahrion, zackptg5
