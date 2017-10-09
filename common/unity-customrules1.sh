@@ -7,7 +7,7 @@
 # ^ DO NOT MODIFY ^
 TIMEOFEXEC=2
 
-ui_print "    Installing libs for $ARCH device"
+ui_print "    Installing libs for $API API $ARCH device"
 $CP_PRFX $INSTALLER/custom/$API/$ARCH/xposed.prop $UNITY/xposed.prop
 $CP_PRFX $INSTALLER/custom/$API/$ARCH/bin/app_process32 $UNITY$SYS/bin/app_process32
 $CP_PRFX $INSTALLER/custom/$API/$ARCH/bin/dex2oat $UNITY$SYS/bin/dex2oat
