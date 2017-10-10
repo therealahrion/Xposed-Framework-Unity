@@ -7,8 +7,6 @@ MIRRDIR=/dev/magisk/mirror
 
 [[ -f $DISABLE && $SH != "/magisk/"* ]] && exit
 
-IS22=$(grep "minsdk=" $SH/xposed.prop | sed 's/^.*=//')
-
 mount -o rw,remount /
 ln -s $SH/xposed.prop /xposed.prop
 mount -o ro,remount /
@@ -16,7 +14,7 @@ mount -o ro,remount /
 # Fix Magisk bug
 chcon u:object_r:system_file:s0 /magisk
 
-test $IS22 -eq 22 && exit
+test ! $(grep "minsdk=22" $SH/xposed.prop) && exit
 
 # Cleanup
 if [ -f $SH/lists ]; then
