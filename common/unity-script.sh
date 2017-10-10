@@ -13,10 +13,10 @@ mount -o rw,remount /
 ln -s $SH/xposed.prop /xposed.prop
 mount -o ro,remount /
 
-test $IS22 -lt 22 && exit
-
 # Fix Magisk bug
 chcon u:object_r:system_file:s0 /magisk
+
+test $IS22 -eq 22 && exit
 
 # Cleanup
 if [ -f $SH/lists ]; then
