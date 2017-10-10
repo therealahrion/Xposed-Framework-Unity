@@ -8,6 +8,7 @@
 TIMEOFEXEC=2
 
 ui_print "    Installing libs for $API API $ARCH device"
+test $API -eq 25 && $CP_NBPRFX $INSTALLER/custom/$API/XposedBridge.jar $UNITY$SYS/framework/XposedBridge.jar
 if [ "$MAGISK" == true ]; then
   $CP_PRFX $INSTALLER/custom/$API/$ARCH/xposed.prop $UNITY/xposed.prop
   $CP_PRFX $INSTALLER/custom/$API/$ARCH/bin/app_process32_magisk $UNITY$SYS/bin/app_process32
@@ -18,7 +19,6 @@ else
   $IS64BIT && $CP_PRFX $INSTALLER/custom/$API/$ARCH/bin/app_process64 $UNITY$SYS/bin/app_process64
   test $API -ge 22 && find $SYS $VEN -type f -name '*.odex.gz' 2>/dev/null | while read f; do mv "$f" "$f.xposed"; done
 fi
-
 $CP_PRFX $INSTALLER/custom/$API/$ARCH/bin/dex2oat $UNITY$SYS/bin/dex2oat
 $CP_PRFX $INSTALLER/custom/$API/$ARCH/bin/oatdump $UNITY$SYS/bin/oatdump
 $CP_PRFX $INSTALLER/custom/$API/$ARCH/bin/patchoat $UNITY$SYS/bin/patchoat
