@@ -1,6 +1,6 @@
 id=xposed
 name=Xposed Framework
-version=v88.0 (Systemless by topjohnwu)
+version=v88.1 (Systemless by topjohnwu)
 versionCode=1
 author=ahrion, zackptg5
 description=Xposed Framework by rovo89, ported to Magisk by topjohnwu

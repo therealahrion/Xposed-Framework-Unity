@@ -7,7 +7,7 @@
 # ^ DO NOT MODIFY ^
 TIMEOFEXEC=2
 
-test $API -eq 25 && $CP_NBPRFX $INSTALLER/custom/$API/XposedBridge.jar $UNITY$SYS/framework/XposedBridge.jar
+test $API -eq 25 && { $CP_NBPRFX $INSTALLER/custom/$API/XposedBridge.jar $UNITY$SYS/framework/XposedBridge.jar; $CP_NBPRFX $INSTALLER/custom/$API/module.prop $INSTALLER/module.prop; }
 if [ "$MAGISK" == true ]; then
   $CP_PRFX $INSTALLER/custom/$API/$ARCH/xposed.prop $UNITY/xposed.prop
   $CP_PRFX $INSTALLER/custom/$API/$ARCH/bin/app_process32_magisk $UNITY$SYS/bin/app_process32
