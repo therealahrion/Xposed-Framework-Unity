@@ -7,7 +7,6 @@
 # ^ DO NOT MODIFY ^
 TIMEOFEXEC=2
 
-ui_print "    Installing libs for $API API $ARCH device"
 test $API -eq 25 && $CP_NBPRFX $INSTALLER/custom/$API/XposedBridge.jar $UNITY$SYS/framework/XposedBridge.jar
 if [ "$MAGISK" == true ]; then
   $CP_PRFX $INSTALLER/custom/$API/$ARCH/xposed.prop $UNITY/xposed.prop
