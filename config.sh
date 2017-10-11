@@ -81,9 +81,9 @@ set_permissions() {
   test "$MAGISK" == "true" && set_perm_recursive $MODPATH 0 0 0755 0644 
  
   # CUSTOM PERMISSIONS
-  set_perm_recursive $UNITY$SYS/bin 0 2000 0755 0755
   set_perm $UNITY$SYS/bin/app_process32 0 2000 0755 u:object_r:zygote_exec:s0
   set_perm $UNITY$SYS/bin/dex2oat 0 2000 0755 u:object_r:dex2oat_exec:s0
+  set_perm $UNITY$SYS/bin/oatdump 0 2000 0755 u:object_r:system_file:s0
   set_perm $UNITY$SYS/bin/patchoat 0 2000 0755 u:object_r:zygote_exec:s0
 
   $IS64BIT && set_perm $UNITY$SYS/bin/app_process64 0 2000 0755 u:object_r:zygote_exec:s0
