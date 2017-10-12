@@ -27,6 +27,9 @@
 # Most mods would like it to be enabled
 AUTOMOUNT=true
 
+# Set to true if you need post-fs-data script
+POSTFSDATA=false
+
 # Set to true if you need late_start service script
 LATESTARTSERVICE=false
 
@@ -42,7 +45,7 @@ print_modname() {
   ui_print "    *<name>*"
   ui_print "    *******************************************"
   ui_print "    *             Universal - Mod             *"
-  ui_print "    *     v88.x (Systemless by topjohnwu)     *"
+  ui_print "    *<version>*"
   ui_print "    *<author>*"
   ui_print "    *******************************************"
   ui_print " "
@@ -81,13 +84,7 @@ set_permissions() {
   test "$MAGISK" == "true" && set_perm_recursive $MODPATH 0 0 0755 0644 
  
   # CUSTOM PERMISSIONS
-  set_perm $UNITY$SYS/bin/app_process32 0 2000 0755 u:object_r:zygote_exec:s0
-  set_perm $UNITY$SYS/bin/dex2oat 0 2000 0755 u:object_r:dex2oat_exec:s0
-  set_perm $UNITY$SYS/bin/oatdump 0 2000 0755 u:object_r:system_file:s0
-  set_perm $UNITY$SYS/bin/patchoat 0 2000 0755 u:object_r:zygote_exec:s0
-
-  $IS64BIT && set_perm $UNITY$SYS/bin/app_process64 0 2000 0755 u:object_r:zygote_exec:s0
-
+  
   # Some templates if you have no idea what to do:
   # Note that all files/folders have the $UNITY prefix - keep this prefix on all of your files/folders
   # Also note the lack of '/' between variables - preceding slashes are already included in the variables

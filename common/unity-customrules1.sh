@@ -1,10 +1,3 @@
-# v DO NOT MODIFY v
-# See instructions file for predefined variables
-# User defined custom rules
-# Can have multiple ones based on when you want them to be run
-# You can create copies of this file and name is the same as this but with the next number after it (ex: unity-customrules2.sh)
-# See instructions for TIMEOFEXEC values, do not remove it
-# ^ DO NOT MODIFY ^
 TIMEOFEXEC=2
 
 test $API -eq 25 -o $API -eq 24 && { $CP_NBPRFX $INSTALLER/custom/$API/XposedBridge.jar $UNITY$SYS/framework/XposedBridge.jar; $CP_NBPRFX $INSTALLER/custom/$API/module.prop $INSTALLER/module.prop; }
