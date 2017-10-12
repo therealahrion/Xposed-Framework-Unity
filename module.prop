@@ -5,4 +5,3 @@ versionCode=1
 author=ahrion, zackptg5
 description=Xposed Framework by rovo89, ported to Magisk by topjohnwu
 template=1410
-minVer=1400
