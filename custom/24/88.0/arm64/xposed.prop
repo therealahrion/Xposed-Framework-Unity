@@ -1,0 +1,4 @@
+version=88.0 (Systemless by topjohnwu)
+arch=arm64
+minsdk=24
+maxsdk=24
