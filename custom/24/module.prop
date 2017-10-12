@@ -1,0 +1,8 @@
+id=xposed
+name=Xposed Framework
+version=v88.1 (Systemless by topjohnwu)
+versionCode=1
+author=ahrion, zackptg5
+description=Xposed Framework by rovo89, ported to Magisk by topjohnwu
+template=1410
+minVer=1400
