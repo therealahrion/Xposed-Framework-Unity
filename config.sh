@@ -79,18 +79,7 @@ REPLACE="
 
 # NOTE: This part has to be adjusted to fit your own needs
 
-set_permissions() {
-  # DEFAULT PERMISSIONS, DON'T REMOVE THEM 
-  test "$MAGISK" == "true" && set_perm_recursive $MODPATH 0 0 0755 0644 
- 
-  # CUSTOM PERMISSIONS
-  set_perm $UNITY$SYS/bin/app_process32 0 2000 0755 u:object_r:zygote_exec:s0
-  set_perm $UNITY$SYS/bin/dex2oat 0 2000 0755 u:object_r:dex2oat_exec:s0
-  set_perm $UNITY$SYS/bin/oatdump 0 2000 0755 u:object_r:system_file:s0
-  set_perm $UNITY$SYS/bin/patchoat 0 2000 0755 u:object_r:zygote_exec:s0
-
-  $IS64BIT && set_perm $UNITY$SYS/bin/app_process64 0 2000 0755 u:object_r:zygote_exec:s0
-  
+set_permissions() {  
   # Some templates if you have no idea what to do:
   # Note that all files/folders have the $UNITY prefix - keep this prefix on all of your files/folders
   # Also note the lack of '/' between variables - preceding slashes are already included in the variables
@@ -102,4 +91,10 @@ set_permissions() {
 
   # set_perm  <filename>                         <owner> <group> <permission> <contexts> (default: u:object_r:system_file:s0)
   # set_perm $UNITY$SYS/lib/libart.so 0 0 0644
+  set_perm $UNITY$SYS/bin/app_process32 0 2000 0755 u:object_r:zygote_exec:s0
+  set_perm $UNITY$SYS/bin/dex2oat 0 2000 0755 u:object_r:dex2oat_exec:s0
+  set_perm $UNITY$SYS/bin/oatdump 0 2000 0755 u:object_r:system_file:s0
+  set_perm $UNITY$SYS/bin/patchoat 0 2000 0755 u:object_r:zygote_exec:s0
+
+  $IS64BIT && set_perm $UNITY$SYS/bin/app_process64 0 2000 0755 u:object_r:zygote_exec:s0
 }
