@@ -30,11 +30,17 @@ if [ $API -ne 25 ] && [ $API -ne 24 ]; then
   fi
 else
   ui_print "   Installing Xposed v88.1..."
-  $CP_NBPRFX $INSTALLER/custom/$API/XposedBridge.jar $UNITY$SYS/framework/XposedBridge.jar
-  $CP_NBPRFX $INSTALLER/custom/$API/module.prop $INSTALLER/module.prop
-  $CP_PRFX $INSTALLER/custom/$API/$ARCH/xposed.prop $UNITY$SYS/xposed.prop
-  $CP_PRFX $INSTALLER/custom/$API/$ARCH/bin/app_process32 $UNITY$SYS/bin/app_process32
-  $IS64BIT && $CP_PRFX $INSTALLER/custom/$API/$ARCH/bin/app_process64 $UNITY$SYS/bin/app_process64
+  if [ "$MAGISK" == true ]; then
+    $CP_PRFX $INSTALLER/custom/$API/$ARCH/xposed.prop $UNITY/xposed.prop
+    $CP_PRFX $INSTALLER/custom/$API/$ARCH/bin/app_process32_magisk $UNITY$SYS/bin/app_process32
+    $IS64BIT && $CP_PRFX $INSTALLER/custom/$API/$ARCH/bin/app_process64_magisk $UNITY$SYS/bin/app_process64
+  else
+	$CP_NBPRFX $INSTALLER/custom/$API/XposedBridge.jar $UNITY$SYS/framework/XposedBridge.jar
+    $CP_NBPRFX $INSTALLER/custom/$API/module.prop $INSTALLER/module.prop
+    $CP_PRFX $INSTALLER/custom/$API/$ARCH/xposed.prop $UNITY$SYS/xposed.prop
+    $CP_PRFX $INSTALLER/custom/$API/$ARCH/bin/app_process32 $UNITY$SYS/bin/app_process32
+    $IS64BIT && $CP_PRFX $INSTALLER/custom/$API/$ARCH/bin/app_process64 $UNITY$SYS/bin/app_process64
+  fi
   $CP_PRFX $INSTALLER/custom/$API/$ARCH/bin/dex2oat $UNITY$SYS/bin/dex2oat
   $CP_PRFX $INSTALLER/custom/$API/$ARCH/bin/oatdump $UNITY$SYS/bin/oatdump
   $CP_PRFX $INSTALLER/custom/$API/$ARCH/bin/patchoat $UNITY$SYS/bin/patchoat
@@ -51,4 +57,4 @@ else
   else
     $CP_PRFX $INSTALLER/custom/$API/$ARCH/lib/libart-disassembler.so $UNITY$SYS/lib/libart-disassembler.so
   fi
-fi                              
+fi								
