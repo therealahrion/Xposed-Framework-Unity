@@ -1,4 +1,5 @@
-version=88.1
+version=88.2
 arch=arm64
 minsdk=25
 maxsdk=25
+requires:fbe_aware=1

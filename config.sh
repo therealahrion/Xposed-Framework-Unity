@@ -45,7 +45,7 @@ print_modname() {
   ui_print "    *<name>*"
   ui_print "    *******************************************"
   ui_print "    *             Universal - Mod             *"
-  ui_print "    *                  v88.x                  *"
+  ui_print "    *<version>*"
   ui_print "    *<author>*"
   ui_print "    *******************************************"
   ui_print " "
