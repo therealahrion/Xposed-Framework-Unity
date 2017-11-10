@@ -11,7 +11,7 @@
 
 ## Change Log
 ### v88.2 r3 - 11.08.2017
-* Updated to Unity/AML v2.2 - Please clean install Audio Modification Library and all modules (this will be the last version you'll have to clean install so in the future the auto clean install/upgrade script will take effect)
+* Updated to Unity/AML v2.2
 
 ### v88.2 - 10.26.2017
 * Initial Unity release
