@@ -1,14 +1,11 @@
 DISABLE=/data/data/de.robv.android.xposed.installer/conf/disabled
 MIRRDIR=/dev/magisk/mirror
 
-[[ -f $DISABLE || $SH != "/magisk/"* ]] && exit
+[[ -f $DISABLE || $SH != "<MAGPATH>"* ]] && exit
 
 mount -o rw,remount /
 ln -s $SH/xposed.prop /xposed.prop
 mount -o ro,remount /
-
-# Fix Magisk bug
-chcon u:object_r:system_file:s0 /magisk
 
 test ! $(grep "minsdk=22" $SH/xposed.prop) && exit
 
