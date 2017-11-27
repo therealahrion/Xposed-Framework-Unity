@@ -9,4 +9,4 @@ test -d /magisk/xposed23 && rm -rf /magisk/xposed23
 test -d /magisk/xposed24 && rm -rf /magisk/xposed24
 test -d /magisk/xposed25 && rm -rf /magisk/xposed25
 
-$MAGISK && sed -i "s|<MAGPATH>|$BOOTPATH|" $INSTALLER/common/unity-audmodlib/$MODID-post-fs-data.sh || POSTFSDATA=false
+$MAGISK || POSTFSDATA=false

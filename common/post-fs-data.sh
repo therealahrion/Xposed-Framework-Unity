@@ -1,7 +1,7 @@
 DISABLE=/data/data/de.robv.android.xposed.installer/conf/disabled
 MIRRDIR=/dev/magisk/mirror
 
-[[ -f $DISABLE || $SH != "<MAGPATH>"* ]] && exit
+[ -f $DISABLE ] && exit
 
 mount -o rw,remount /
 ln -s $SH/xposed.prop /xposed.prop
