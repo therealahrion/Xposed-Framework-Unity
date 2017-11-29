@@ -10,6 +10,9 @@
 * Works with nearly every device, kernel, and rom
 
 ## Change Log
+### v88.2 r4 - 11.28.2017
+* Updated to Unity/AML v2.3
+
 ### v88.2 r3 - 11.08.2017
 * Updated to Unity/AML v2.2
 
