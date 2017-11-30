@@ -10,6 +10,9 @@
 * Works with nearly every device, kernel, and rom
 
 ## Change Log
+### v88.2 r5 - 11.30.2017
+* Updated to Unity/AML v2.4
+
 ### v88.2 r4 - 11.28.2017
 * Updated to Unity/AML v2.3
 * Updated boot script for magisk 14.5 support
