@@ -1,4 +1,4 @@
-TIMEOFEXEC=2
+TIMEOFEXEC=3
 
 if [ "$MAGISK" == true ]; then
   $CP_PRFX $INSTALLER/custom/$API/$ARCH/xposed.prop $UNITY/xposed.prop
