@@ -10,6 +10,9 @@
 * Works with nearly every device, kernel, and rom
 
 ## Change Log
+### v88.9 - 12.18.2017
+* Updated xposed to v89
+
 ### v88.2 r6 - 12.13.2017
 * Updated to Unity/AML v2.5
 

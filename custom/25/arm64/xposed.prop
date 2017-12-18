@@ -1,4 +1,4 @@
-version=88.2
+version=89
 arch=arm64
 minsdk=25
 maxsdk=25

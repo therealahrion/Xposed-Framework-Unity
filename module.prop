@@ -1,7 +1,7 @@
 id=xposed
 name=Xposed Framework
-version=v88.2 r6
-versionCode=8
+version=v88.9
+versionCode=9
 author=rovo89, ahrion, zackptg5
 description=Xposed Framework by rovo89
 template=1400
