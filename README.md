@@ -12,6 +12,7 @@
 ## Change Log
 ### v88.9 r2 - 
 * Updated to Unity/AML v2.6
+* Updated Xposed Installer app to 12/25 version
 
 ### v88.9 - 12.18.2017
 * Updated xposed to v89
