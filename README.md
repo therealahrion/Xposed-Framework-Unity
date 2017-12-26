@@ -10,7 +10,7 @@
 * Works with nearly every device, kernel, and rom
 
 ## Change Log
-### v88.9 r2 - 
+### v88.9 r2 - 12.25.2017
 * Updated to Unity/AML v2.6
 * Updated Xposed Installer app to 12/25 version
 
