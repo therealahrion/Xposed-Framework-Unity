@@ -1,7 +1,7 @@
 # Xposed Framework
 
 ## Compatibility
-* Android Kitkat+
+* Android Lollipop - Nougat
 * init.d (other root & rootless)
 * MagiskSU & SuperSU
 * Magisk & System install
