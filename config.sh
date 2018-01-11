@@ -99,6 +99,13 @@ set_permissions() {
   set_perm $UNITY$SYS/bin/dex2oat 0 2000 0755 u:object_r:dex2oat_exec:s0
   set_perm $UNITY$SYS/bin/oatdump 0 2000 0755 u:object_r:system_file:s0
   set_perm $UNITY$SYS/bin/patchoat 0 2000 0755 u:object_r:zygote_exec:s0
-
+  
   $IS64BIT && set_perm $UNITY$SYS/bin/app_process64 0 2000 0755 u:object_r:zygote_exec:s0
+  
+  if $OREONEW; then
+    set_perm $UNITY$SYS/bin/dexdiag 0 2000 0755 u:object_r:system_file:s0
+    set_perm $UNITY$SYS/bin/dexlist 0 2000 0755 u:object_r:system_file:s0
+    set_perm $UNITY$SYS/bin/dexoptanalyzer 0 2000 0755 u:object_r:dexoptanalyzer_exec:s0
+    set_perm $UNITY$SYS/bin/profman 0 2000 0755 u:object_r:profman_exec:s0
+  fi
 }

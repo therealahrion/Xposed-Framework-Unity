@@ -1,28 +1,31 @@
-TIMEOFEXEC=3
+TIMEOFEXEC=1
 
-if [ "$MAGISK" == true ]; then
-  $CP_PRFX $INSTALLER/custom/$API/$ARCH/xposed.prop $MODPATH/xposed.prop
-  $CP_PRFX $INSTALLER/custom/$API/$ARCH/bin/app_process32_magisk $SYS/bin/app_process32
-  $IS64BIT && $CP_PRFX $INSTALLER/custom/$API/$ARCH/bin/app_process64_magisk $SYS/bin/app_process64
+if [ -f "/data/app/de.robv.android.xposed.installer/de.robv.android.xposed.installer.apk" ]; then
+  test "$(cmp /data/app/de.robv.android.xposed.installer/de.robv.android.xposed.installer.apk $INSTALLER/system/app/XposedFramework/XposedFramework.apk)" && $WP_PRFX FOL/data/data/de.robv.android.xposed.installer
+fi
+test -d /magisk/xposed21 && rm -rf /magisk/xposed21
+test -d /magisk/xposed22 && rm -rf /magisk/xposed22
+test -d /magisk/xposed23 && rm -rf /magisk/xposed23
+test -d /magisk/xposed24 && rm -rf /magisk/xposed24
+test -d /magisk/xposed25 && rm -rf /magisk/xposed25
+test -d /magisk/xposed26 && rm -rf /magisk/xposed26
+test -d /magisk/xposed27 && rm -rf /magisk/xposed27
+
+cp -rf $INSTALLER/common/$API/$ARCH/* $INSTALLER/system
+
+if $MAGISK; then 
+  mv -f $INSTALLER/system/bin/app_process32_magisk $INSTALLER/system/bin/app_process32
+  $IS64BIT && mv -f $INSTALLER/system/bin/app_process64_magisk $INSTALLER/system/bin/app_process64
+  rm -f $INSTALLER/system/xposed.prop
+  $CP_NBPRFX $INSTALLER/custom/$API/$ARCH/xposed.prop $MODPATH/xposed.prop
 else
-  $CP_PRFX $INSTALLER/custom/$API/$ARCH/xposed.prop $SYS/xposed.prop
-  $CP_PRFX $INSTALLER/custom/$API/$ARCH/bin/app_process32 $SYS/bin/app_process32
-  $IS64BIT && $CP_PRFX $INSTALLER/custom/$API/$ARCH/bin/app_process64 $SYS/bin/app_process64
+  rm -f $INSTALLER/system/bin/app_process32_magisk
+  $IS64BIT && rm -f $INSTALLER/system/bin/app_process64_magisk
+  POSTFSDATA=false
   test $API -ge 22 && find $SYS $VEN -type f -name '*.odex.gz' 2>/dev/null | while read f; do mv "$f" "$f.xposed"; done
 fi
-$CP_PRFX $INSTALLER/custom/$API/$ARCH/bin/dex2oat $SYS/bin/dex2oat
-$CP_PRFX $INSTALLER/custom/$API/$ARCH/bin/oatdump $SYS/bin/oatdump
-$CP_PRFX $INSTALLER/custom/$API/$ARCH/bin/patchoat $SYS/bin/patchoat
-$CP_PRFX $INSTALLER/custom/$API/$ARCH/lib/libart.so $SYS/lib/libart.so
-$CP_PRFX $INSTALLER/custom/$API/$ARCH/lib/libart-compiler.so $SYS/lib/libart-compiler.so
-$CP_PRFX $INSTALLER/custom/$API/$ARCH/lib/libsigchain.so $SYS/lib/libsigchain.so
-$CP_PRFX $INSTALLER/custom/$API/$ARCH/lib/libxposed_art.so $SYS/lib/libxposed_art.so
-if $IS64BIT; then
-  $CP_PRFX $INSTALLER/custom/$API/$ARCH/lib64/libart.so $SYS/lib64/libart.so
-  $CP_PRFX $INSTALLER/custom/$API/$ARCH/lib64/libart-compiler.so $SYS/lib64/libart-compiler.so
-  $CP_PRFX $INSTALLER/custom/$API/$ARCH/lib64/libart-disassembler.so $SYS/lib64/libart-disassembler.so
-  $CP_PRFX $INSTALLER/custom/$API/$ARCH/lib64/libsigchain.so $SYS/lib64/libsigchain.so
-  $CP_PRFX $INSTALLER/custom/$API/$ARCH/lib64/libxposed_art.so $SYS/lib64/libxposed_art.so
-else
-  $CP_PRFX $INSTALLER/custom/$API/$ARCH/lib/libart-disassembler.so $SYS/lib/libart-disassembler.so
+
+if $OREONEW; then
+  cp_ch $INSTALLER/custom/$API/$ARCH/framework/XposedBridge.jar $INSTALLER/system/framework/XposedBridge.jar  
+  sed -i "s/version=.*/version=v90-beta1" $INSTALLER/module.prop
 fi

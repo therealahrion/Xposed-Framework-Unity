@@ -1,0 +1,5 @@
+version=90-beta1
+arch=arm
+minsdk=26
+maxsdk=26
+requires:fbe_aware=1
