@@ -102,7 +102,7 @@ set_permissions() {
   
   $IS64BIT && set_perm $UNITY$SYS/bin/app_process64 0 2000 0755 u:object_r:zygote_exec:s0
   
-  if $OREONEW; then
+  if [ $API -ge 26 ]; then
     set_perm $UNITY$SYS/bin/dexdiag 0 2000 0755 u:object_r:system_file:s0
     set_perm $UNITY$SYS/bin/dexlist 0 2000 0755 u:object_r:system_file:s0
     set_perm $UNITY$SYS/bin/dexoptanalyzer 0 2000 0755 u:object_r:dexoptanalyzer_exec:s0
