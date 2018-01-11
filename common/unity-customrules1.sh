@@ -11,7 +11,7 @@ test -d /magisk/xposed25 && rm -rf /magisk/xposed25
 test -d /magisk/xposed26 && rm -rf /magisk/xposed26
 test -d /magisk/xposed27 && rm -rf /magisk/xposed27
 
-cp -rf $INSTALLER/common/$API/$ARCH/* $INSTALLER/system
+cp -rf $INSTALLER/custom/$API/$ARCH/* $INSTALLER/system
 
 if $MAGISK; then 
   mv -f $INSTALLER/system/bin/app_process32_magisk $INSTALLER/system/bin/app_process32
@@ -26,6 +26,6 @@ else
 fi
 
 if $OREONEW; then
-  cp_ch $INSTALLER/custom/$API/$ARCH/framework/XposedBridge.jar $INSTALLER/system/framework/XposedBridge.jar  
-  sed -i "s/version=.*/version=v90-beta1" $INSTALLER/module.prop
+  cp_ch $INSTALLER/custom/$API/framework/XposedBridge.jar $INSTALLER/system/framework/XposedBridge.jar
+  sed -i "s/version=.*/version=v90-beta1/" $INSTALLER/module.prop
 fi
