@@ -10,7 +10,7 @@
 * Works with nearly every device, kernel, and rom
 
 ## Change Log
-### v89 r5 - 
+### v89 r5 - 1.12.2018
 * Updated to Unity/AML 2.9
 * Added xposed v90 beta1 for oreo
 
