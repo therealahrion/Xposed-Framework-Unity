@@ -1,7 +1,7 @@
 # Xposed Framework
 
 ## Compatibility
-* Android Lollipop - Nougat
+* Android Lollipop - Oreo
 * init.d (other root & rootless)
 * MagiskSU & SuperSU
 * Magisk & System install
@@ -10,6 +10,9 @@
 * Works with nearly every device, kernel, and rom
 
 ## Change Log
+### 1.18.2018
+* Updated xposed v90 beta2 for oreo
+
 ### v89 r5 - 1.12.2018
 * Updated to Unity/AML 2.9
 * Added xposed v90 beta1 for oreo

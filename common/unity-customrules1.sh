@@ -28,6 +28,8 @@ fi
 if $OREONEW; then
   cp -f $INSTALLER/custom/XposedBridge.jar $INSTALLER/system/framework/XposedBridge.jar
   cp -f $INSTALLER/custom/XposedInstaller.apk $INSTALLER/system/app/XposedInstaller/XposedInstaller.apk
-  sed -i "s/version=.*/version=v90-beta1/" $INSTALLER/module.prop
+  sed -i "s/version=.*/version=v90-beta2/" $INSTALLER/module.prop
   LIBDIR=$SYS; OREONEW=false
+else
+  sed -i "s/version=.*/version=v89r5/" $INSTALLER/module.prop
 fi
