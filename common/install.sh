@@ -20,7 +20,7 @@ fi
 if [ $API -ge 26 ]; then
   cp -f $INSTALLER/custom/XposedBridge.jar $INSTALLER/system/framework/XposedBridge.jar
   cp -f $INSTALLER/custom/XposedInstaller.apk $INSTALLER/system/app/XposedInstaller/XposedInstaller.apk
-  sed -i "s/version=.*/version=v90-beta3/" $INSTALLER/module.prop
+  sed -i "s/version=.*/version=v90-beta3r1/" $INSTALLER/module.prop
 else
-  sed -i "s/version=.*/version=v89/" $INSTALLER/module.prop
+  sed -i "s/version=.*/version=v89r1/" $INSTALLER/module.prop
 fi
