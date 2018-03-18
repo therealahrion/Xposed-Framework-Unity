@@ -6,6 +6,9 @@
 * All root solutions (requires init.d support if not using magisk or supersu. Try [Init.d Injector](https://forum.xda-developers.com/android/software-hacking/mod-universal-init-d-injector-wip-t3692105))
 
 ## Change Log
+### v89/90b3r2 - 3.18.2018
+* Unity v1.4 update
+
 ### v89/90b3r1 - 2.25.2018
 * Fine tune prop logic
 * Update util_functions with magisk 15.4 stuff
