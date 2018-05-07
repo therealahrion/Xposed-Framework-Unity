@@ -4,7 +4,9 @@ MIRRDIR=/dev/magisk/mirror
 [ -f $DISABLE ] && exit
 
 mount -o rw,remount /
-ln -s $MODPATH/xposed.prop /xposed.prop
+cp -f $MODPATH/xposed.prop /sbin/xposed.prop
+chcon u:object_r:system_file:s0 /sbin/xposed.prop
+ln -s /sbin/xposed.prop /xposed.prop
 mount -o ro,remount /
 
 test ! "$(grep "minsdk=22" $MODPATH/xposed.prop)" && exit
