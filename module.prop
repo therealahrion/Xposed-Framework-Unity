@@ -1,7 +1,7 @@
 id=xposed
 name=Xposed Framework
 version=v89-v90b3r9
-versionCode=24
+versionCode=25
 author=rovo89, ahrion, zackptg5
 description=Xposed Framework by rovo89. Contains unity installer that will dynamically install proper xposed version for all devices supported by official xposed framework
 minMagisk=1530
