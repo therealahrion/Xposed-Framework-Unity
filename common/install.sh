@@ -1,3 +1,6 @@
+ui_print "   Decompressing files..."
+tar -xf $INSTALLER/custom/$API.tar.xz -C $INSTALLER/custom 2>/dev/null
+
 rm -rf /data/app/de.robv.android.xposed.installer /magisk/xposed* /sbin/.core/img/xposed*
 if [ -f "/data/app/de.robv.android.xposed.installer/de.robv.android.xposed.installer.apk" ]; then
   [ "$(cmp /data/app/de.robv.android.xposed.installer/de.robv.android.xposed.installer.apk $INSTALLER/system/app/XposedFramework/XposedFramework.apk)" ] && rm -rf /data/data/de.robv.android.xposed.installer
