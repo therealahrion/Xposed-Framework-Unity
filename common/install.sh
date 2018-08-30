@@ -9,7 +9,7 @@ if $MAGISK && ! $SYSOVERRIDE; then
   mv -f $INSTALLER/system/bin/app_process32_magisk $INSTALLER/system/bin/app_process32
   $IS64BIT && mv -f $INSTALLER/system/bin/app_process64_magisk $INSTALLER/system/bin/app_process64
   rm -f $INSTALLER/system/xposed.prop
-  cp_ch_nb $INSTALLER/custom/$API/$ARCH/xposed.prop $UNITY/xposed.prop
+  cp_ch -n $INSTALLER/custom/$API/$ARCH/xposed.prop $UNITY/xposed.prop
 else
   rm -f $INSTALLER/system/bin/app_process32_magisk
   $IS64BIT && rm -f $INSTALLER/system/bin/app_process64_magisk
