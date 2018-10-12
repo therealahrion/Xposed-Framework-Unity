@@ -52,4 +52,4 @@
 * Initial rerelease
 
 ## Source Code
-* Module [GitHub](https://github.com/therealahrion/Audio-Modification-Library)
+* Module [GitHub](https://github.com/therealahrion/Xposed-Framework-Unity)
