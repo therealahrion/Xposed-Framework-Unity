@@ -7,7 +7,7 @@
 
 ## Change Log
 ### v89/90b3r15 - 12.9.2018
-* Unity v1.8.1 update
+* Unity v1.8.2 update
 
 ### v89/90b3r14 - 10.23.2018
 * Unity v1.7.2 update
